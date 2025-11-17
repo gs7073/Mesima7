@@ -18,7 +18,6 @@ public class Main {
         allEmployees.add(new Salesperson(5, 4000, "Noa", 0.05, 15000));
 
 
-
         for (Employee employee : allEmployees) {
             System.out.println(employee.toString());
 
@@ -30,15 +29,19 @@ public class Main {
         double totalBonuses = 0;
 
         for (Employee employee : allEmployees) {
+
             if (employee instanceof BonusEligible) {
-                totalBonuses += ((BonusEligible) employee).calculateBonus();
+
+                BonusEligible bonus = (BonusEligible) employee;
+                totalBonuses += bonus.calculateBonus();
             }
         }
 
-        System.out.println("Employee Total bonuses is: " + totalBonuses);
-
-
+        System.out.println("Employee Total bonuses are: " + totalBonuses);
 
 
     }
+
+
+
 }
